@@ -1,43 +1,20 @@
-# DialogEval: A Cross-Framework Annotation Benchmark for Classroom Dialogue
-
+# DialogEval  
 <p align="center">
-  <!-- Inline SVG icon: microscope + dialogue (placeholder, anonymous-safe) -->
-  <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#4F46E5"/>
-        <stop offset="100%" stop-color="#7C3AED"/>
-      </linearGradient>
-    </defs>
-    <circle cx="60" cy="60" r="56" fill="url(#g)" opacity="0.15"/>
-    <circle cx="52" cy="50" r="20" fill="none" stroke="#1F2937" stroke-width="4"/>
-    <rect x="68" y="68" width="26" height="10" rx="4" fill="#1F2937"/>
-    <rect x="44" y="78" width="42" height="8" rx="4" fill="#374151"/>
-    <path d="M38 44 L26 30" stroke="#1F2937" stroke-width="4" stroke-linecap="round"/>
-    <path d="M26 30 L32 26" stroke="#1F2937" stroke-width="4" stroke-linecap="round"/>
-    <!-- speech bubble -->
-    <path d="M50 46 h14 a6 6 0 0 1 6 6 v4 a6 6 0 0 1 -6 6 h-6 l-4 4 v-4 h-4 a6 6 0 0 1 -6 -6 v-4 a6 6 0 0 1 6 -6 z"
-          fill="#111827"/>
-  </svg>
+  <img src="Image.png" alt="DialogEval Icon" width="160"/>
 </p>
 
 <p align="center">
-  <b>
-    Evaluating whether large language models can reason
-    <i>between</i>, <i>behind</i>, and <i>beyond</i> the words
-    in classroom dialogue.
-  </b><br/>
-  <sub>Supplementary materials for an anonymous ACL 2026 submission.</sub>
+<b>DialogEval: A Cross-Framework Annotation Benchmark for Classroom Dialogue</b><br/>
+Evaluating whether large language models can reason <i>between</i>, <i>behind</i>, and <i>beyond</i> the words in classroom dialogue.
 </p>
 
 <p align="center">
-  <a href="https://acl-dialogeval.github.io/benchmark/">
-    <img src="https://img.shields.io/badge/Project%20Website-GitHub%20Pages-2563EB?style=for-the-badge" alt="Project Website">
-  </a>
-  <a href="https://github.com/ACL-DialogEval/DialogEval-Supplementary-Material">
-    <img src="https://img.shields.io/badge/Dataset%20%26%20Protocols-Repository-111827?style=for-the-badge" alt="Dataset & Protocols">
-  </a>
-  <img src="https://img.shields.io/badge/ACL%202026-Anonymous%20Review-7C3AED?style=for-the-badge" alt="ACL 2026 Anonymous Review">
+Supplementary materials for an <b>anonymous ACL 2026 submission</b>.
+</p>
+
+<p align="center">
+  <a href="https://acl-dialogeval.github.io/benchmark/">Project Website</a> •
+  <a href="https://github.com/ACL-DialogEval/DialogEval-Supplementary-Material">Dataset & Protocols</a>
 </p>
 
 ---
@@ -46,87 +23,108 @@
 
 **DialogEval** is a diagnostic benchmark for **Automated Classroom Dialogue Encoding (ACDE)**.
 
-Rather than focusing solely on label accuracy, DialogEval evaluates whether large
-language models (LLMs) can perform the **inferential reasoning** required to
-interpret authentic classroom discourse.
+Rather than focusing solely on surface-level label accuracy, DialogEval evaluates whether large language models (LLMs) can perform the **inferential reasoning** required to interpret authentic classroom discourse.
 
-Classroom dialogue is sequential, intention-driven, and norm-governed.
-Surface-form similarity often masks fundamentally different discourse functions.
-DialogEval is designed to expose **where and why models fail** under such conditions.
+Classroom dialogue is inherently **sequential**, **intentional**, and **norm-governed**.  
+Surface-form similarity often masks fundamentally different discourse functions.  
+DialogEval is designed to expose *where* and *why* models fail under such conditions.
 
 ---
 
 ## 🧠 The Three Bs Framework
 
-DialogEval introduces a unified **Three Bs** analytical lens that organizes
-classroom discourse understanding by increasing cognitive demand:
+DialogEval introduces a unified **Three Bs analytical lens**, which organizes classroom discourse understanding by increasing cognitive demand:
 
-- **Between the Words**  
-  Logical boundaries, contextual dependency, and sequential structure
-- **Behind the Words**  
-  Latent pedagogical intent and discourse roles
-- **Beyond the Words**  
-  Domain norms, cultural expectations, and instructional conventions
+| **Between the Words** | **Behind the Words** | **Beyond the Words** |
+|----------------------|---------------------|----------------------|
+| Logical boundaries and turn segmentation | Latent pedagogical intent | Domain norms and cultural expectations |
+| Contextual dependency | Discourse roles (e.g., initiation, feedback) | Instructional conventions |
+| Sequential structure | Intent decoding | Expertise- and norm-driven inference |
 
 This framework is applied across three established classroom discourse schemes:
-**FIAC**, **IRF**, and **SEDA**.
+
+**FIAC**, **IRF**, and **SEDA**
 
 ---
 
-## 🧪 Benchmark Design
-
-DialogEval is a **cross-framework annotation benchmark** guided by three principles:
-
-- **Context-aware annotation**  
-  Target utterances are labeled within bounded sliding windows to preserve
-  local discourse structure.
-- **Prompting hierarchy**  
-  Multiple prompting strategies probe reasoning behavior under varying
-  instructional scaffolds.
-- **Diagnostics-first evaluation**  
-  Emphasis is placed on systematic error patterns rather than leaderboard-style
-  ranking.
-
----
-
-## 🧩 Prompting Strategies
-
-DialogEval implements a hierarchical prompting design:
-
-- **P1 – Vanilla (zero-shot)**  
-  Label options only
-- **P2 – Definition (zero-shot)**  
-  Label options with category definitions
-- **P3 – Expert Manual (few-shot)**  
-  Scenario-based guidance inspired by annotation manuals
-- **P4 – Chain-of-Thought (CoT)**  
-  Explicit reasoning paths for labeling decisions
-
----
-
-## 🩸 Diagnostic Focus
+## 🔬 Diagnostic Focus
 
 DialogEval emphasizes **explainable failure modes**, including:
 
-- Hallucinated interactivity triggered by fillers and deixis
-- Semantic anchoring effects overriding discourse function
-- Boundary segmentation failures induced by connectors and discourse markers
-- Logic-threshold effects under contextual ambiguity
+- 🔎 *Hallucinated interactivity* triggered by fillers and deixis  
+- 🔎 *Semantic anchoring effects* overriding discourse function  
+- 🔎 *Boundary segmentation failures* induced by connectors and discourse markers  
+- 🔎 *Logic-threshold effects* under contextual ambiguity  
 
-Detailed analyses, confusion matrices, and illustrative cases are provided
-on the project website and in the supplementary materials.
+Detailed analyses, confusion matrices, and illustrative classroom cases are provided on the **project website** and in this repository.
 
 ---
 
-## 📁 Repository Contents
-
-```text
+## 📁 Repository Structure
 .
-├── dialogeval_assets/          # figures, matrices, appendix PDFs
-├── Prompt_FIAC.py
-├── Prompt_IRF_cot.py
-├── Prompt_SEDA.py
-├── Analysis_FIAC.py
-├── Classroom Dialogue Example*
-├── index.html                  # project website (GitHub Pages)
-└── README.md
+├── index.html # Project website (GitHub Pages)
+├── Image.png # DialogEval icon (microscope + dialogue bubble)
+├── README.md # This document
+│
+├── Prompt_FIAC.py # Prompt design for FIAC annotation
+├── Prompt_IRF_cot.py # IRF prompt with chain-of-thought reasoning
+├── Prompt_SEDA.py # SEDA prompt specification
+│
+├── Analysis_FIAC.py # Diagnostic analysis (confusion matrices, errors)
+│
+├── Classroom_Dialogue_Example_*.txt
+│ # Annotated classroom dialogue examples
+│
+└── dialogeval_assets/ # Figures used by the project website
+
+
+---
+
+## 📊 Code & Usage
+
+The code in this repository supports:
+
+- Prompt-based annotation across **FIAC / IRF / SEDA**
+- Sliding-window discourse segmentation
+- Confusion-matrix–based diagnostic analysis
+- Error pattern inspection aligned with the Three Bs framework
+
+The scripts are intended for **analysis and reproduction of reported findings**, not as a general-purpose training pipeline.
+
+---
+
+## 📦 Dataset & Protocols
+
+Due to anonymized review constraints, datasets and annotation protocols are provided in a **separate supplementary-material repository**:
+
+👉 https://github.com/ACL-DialogEval/DialogEval-Supplementary-Material
+
+This separation ensures:
+- Clear boundary between benchmark description and data access
+- Compliance with ACL anonymous review policies
+
+---
+
+## 🚀 Release Plan
+
+- **During review**:  
+  - Code, figures, and selected examples are available for transparency and inspection  
+  - Dataset access is provided via supplementary materials  
+
+- **After acceptance**:  
+  - Full dataset, complete annotation guidelines, and end-to-end pipelines will be fully open-sourced  
+  - Documentation will be expanded for broader research and educational use  
+
+---
+
+## 📌 Notes on Anonymity
+
+This repository is maintained as an **anonymous project page** for ACL 2026 review.  
+All identifying information will be disclosed only after the review process concludes.
+
+---
+
+## 📣 Citation
+
+If you find DialogEval useful, please cite the corresponding ACL paper (citation will be released upon acceptance).
+
