@@ -10,9 +10,7 @@ import urllib3
 # 忽略 OpenSSL 警告
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# ================= 1. 配置 (DeepSeek-R1) =================
-# ★★★ 修复 1：更换为 ModelScope 免费版支持更好的蒸馏版模型 ★★★
-# 满血版 R1 (671B) 经常报 400 或 503，蒸馏版 (32B) 速度快且支持免费调用
+# ================= 1. 配置 =================
 MODEL_ID = "Qwen/Qwen2.5-7B-Instruct"
 API_URL = "https://api-inference.modelscope.cn/v1/chat/completions"
 
