@@ -65,16 +65,12 @@ Detailed analyses, confusion matrices, and illustrative classroom cases are prov
 ├── index.html # Project website (GitHub Pages)
 ├── Image.png # DialogEval icon (microscope + dialogue bubble)
 ├── README.md # This document
-│
 ├── Prompt_FIAC.py # Prompt design for FIAC annotation
 ├── Prompt_IRF_cot.py # IRF prompt with chain-of-thought reasoning
 ├── Prompt_SEDA.py # SEDA prompt specification
-│
 ├── Analysis_FIAC.py # Diagnostic analysis (confusion matrices, errors)
-│
 ├── Classroom_Dialogue_Example_*.txt
 │ # Annotated classroom dialogue examples
-│
 └── dialogeval_assets/ # Figures used by the project website
 
 
