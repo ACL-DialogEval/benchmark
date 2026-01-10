@@ -157,12 +157,28 @@ Below are representative matrices illustrating systematic error patterns across 
 > Update folder names to match your actual repository.
 
 ```text
-DialogEval-Supplementary-Material/
-├── data/
-│   ├── examples/                     # illustrative classroom dialogue examples
-│   ├── label_schema/                 # FIAC / IRF / SEDA label definitions
-│   └── annotation_guidelines.md      # protocols & conventions
-├── prompts/                          # P1–P4 prompts / templates
-├── evaluation/                       # evaluation entrypoints + scoring
-├── diagnostics/                      # error analyses (lure words, thresholds, etc.)
-└── scripts/                          # preprocessing / aggregation utilities
+.
+├── dialogeval_assets/                  # figures, confusion matrices, appendix PDFs
+│   ├── fig1_3b_framework.png
+│   ├── fig2_sliding_window.png
+│   ├── fig3_prompt_hierarchy_example.png
+│   ├── fig4_capillary_sankey.png
+│   ├── cm_fiac_gemini.png
+│   ├── cm_irf_deepseek.png
+│   ├── cm_irf_qwen.png
+│   ├── cm_seda_educhat.png
+│   ├── cm_seda_innospark.png
+│   └── appendix_lure_words.pdf
+├── Prompt_FIAC.py
+├── Prompt_IRF_cot.py
+├── Prompt_SEDA.py
+├── Analysis_FIAC.py
+├── Classroom Dialogue Example*
+├── index.html                          # project website (GitHub Pages)
+└── README.md
+
+## 🔓 Release Plan
+
+Upon acceptance, we plan to publicly release the full dataset,
+annotation protocols, and evaluation code to facilitate
+reproducibility and further research.
